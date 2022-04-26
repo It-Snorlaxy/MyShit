@@ -1,0 +1,2 @@
+oliver,b'$2b$12$FZy9Fgv5F3dWNXCS7P3dpuQgNOMk2gUZOu.xIbulOAaFXjPQiQQY2'oliver,b'$2b$12$BV2ApK4TvHJg2ut2N7nyPuhaBljM6gDtTQZmWZenvy.vdXZEDMnea'oliver,b'$2b$12$wgkTtSq0/eeKwOyWuEE25uXzVEOPHc4vZ1rdsrCJhxdLGzGAZ9l8O'admin,b'$2b$12$q.6hBMbW8EYB2g2vqGPgnef9/42eMSkHweYNMOfbHFknvNOkKAYHC',b'$2b$12$q.6hBMbW8EYB2g2vqGPgne'
+admin,b'$2b$12$6U4C1ZgklBFLdVN5x8QPbe60TUUJCxCePnPD7JvgLXfm1apEanCD6',b'$2b$12$6U4C1ZgklBFLdVN5x8QPbe'
