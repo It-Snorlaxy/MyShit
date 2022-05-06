@@ -21,7 +21,7 @@ class Player(pg.sprite.Sprite):
         #Needed for every sprite
         pg.sprite.Sprite.__init__(self)
         self.image = pg.image.load("player.png")
-        self.rect = self.image.get.rect()
+        self.rect = self.image.get_rect()
         self.rect.center = (WIDTH / 2, HEIGHT / 2)
 
 #initialize pygame and create window
