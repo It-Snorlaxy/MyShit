@@ -29,7 +29,7 @@ class Player(pg.sprite.Sprite):
     def __init__(self):
         #Needed for every sprite
         pg.sprite.Sprite.__init__(self)
-        self.image = pg.image.load(os.path.join(Assets_folder, "player.png")).convert()
+        self.image = pg.image.load(os.path.join("player.png")).convert()
         self.image.set_colorkey(BLACK)
         self.rect = self.image.get_rect()
         self.rect.center = (WIDTH / 2, HEIGHT / 2)
