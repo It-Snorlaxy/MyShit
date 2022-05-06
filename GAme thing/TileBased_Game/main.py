@@ -1,7 +1,7 @@
 # KidsCanCode - Game Development with Pygame video series
-# Tile-based game - Part 1
-# Project setup
-# Video link: https://youtu.be/3UxnelT9aCo
+# Tile-based game - Part 4
+# Scrolling Map/Camera
+# Video link: https://youtu.be/3zV2ewk-IGU
 import pygame as pg
 import sys
 from os import path
@@ -29,7 +29,7 @@ class Game:
             for col, tile in enumerate(tiles):
                 if tile == '1':
                     Wall(self, col, row)
-                if tile == 'p':
+                if tile == 'P':
                     self.player = Player(self, col, row)
         self.camera = Camera(self.map.width, self.map.height)
 
@@ -49,7 +49,7 @@ class Game:
     def update(self):
         # update portion of the game loop
         self.all_sprites.update()
-        slef.camera.update(self.player)
+        self.camera.update(self.player)
 
     def draw_grid(self):
         for x in range(0, WIDTH, TILESIZE):
@@ -61,7 +61,7 @@ class Game:
         self.screen.fill(BGCOLOR)
         self.draw_grid()
         for sprite in self.all_sprites:
-            screen.blit(sprite.image, self.camera.apply(sprite))
+            self.screen.blit(sprite.image, self.camera.apply(sprite))
         pg.display.flip()
 
     def events(self):
