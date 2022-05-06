@@ -64,13 +64,25 @@ class Game:
             if event.type == pg.KEYDOWN:
                 if event.key == pg.K_ESCAPE:
                     self.quit()
+                #Left movement
                 if event.key == pg.K_LEFT:
                     self.player.move(dx=-1)
+                if event.key == pg.K_a:
+                    self.player.move(dx=-1)
+                #Right movment
                 if event.key == pg.K_RIGHT:
                     self.player.move(dx=1)
+                if event.key == pg.K_d:
+                    self.player.move(dx=1)
+                #Upwards movment
                 if event.key == pg.K_UP:
                     self.player.move(dy=-1)
+                if event.key == pg.K_w:
+                    self.player.move(dy=-1)
+                #Downwards movment
                 if event.key == pg.K_DOWN:
+                    self.player.move(dy=1)
+                if event.key == pg.K_s:
                     self.player.move(dy=1)
 
     def show_start_screen(self):
