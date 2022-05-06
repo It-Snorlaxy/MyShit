@@ -38,5 +38,4 @@ while running:
     # *after* drawing everything, flip the display -Double Buffering-
     pygame.display.flip()
 
-
-exit()
+pygame.quit()
