@@ -2,6 +2,7 @@ import pygame as pg
 from os import path
 from settings import *
 from combat import *
+import time
 vec = pg.math.Vector2
 
 class Player(pg.sprite.Sprite):
@@ -56,12 +57,23 @@ class Player(pg.sprite.Sprite):
         if dir == 'x':
             hits = pg.sprite.spritecollide(self, self.game.enemies, False)
             if hits:
+                if self.vel.x > 0:
+                    self.pos.x = hits[0].rect.left - self.rect.width
+                if self.vel.x < 0:
+                    self.pos.x = hits[0].rect.right
+                self.vel.x = 0
+                self.rect.x = self.pos.x
                 combat()
         if dir == 'y':
             hits = pg.sprite.spritecollide(self, self.game.enemies, False)
             if hits:
+                if self.vel.y > 0:
+                    self.pos.y = hits[0].rect.top - self.rect.height
+                if self.vel.y < 0:
+                    self.pos.y = hits[0].rect.bottom
+                self.vel.y = 0
+                self.rect.y = self.pos.y
                 combat()
-
 
     def update(self):
         self.get_keys()
@@ -93,6 +105,7 @@ class Wall(pg.sprite.Sprite):
         self.rect.y = y * TILESIZE
 
 class Enemy(pg.sprite.Sprite):
+
     def __init__(self, game, x, y):
         self.groups = game.all_sprites, game.enemies
         pg.sprite.Sprite.__init__(self, self.groups)

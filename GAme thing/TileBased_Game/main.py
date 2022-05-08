@@ -10,7 +10,6 @@ from sprites import *
 from tilemap import *
 from combat import *
 
-
 class Game:
     def __init__(self):
         pg.init()
@@ -39,7 +38,7 @@ class Game:
         game_folder = path.dirname(__file__)
         assets_folder = path.join(game_folder, 'assets')
         map_folder = path.join(game_folder, 'Maps')
-        self.map = Map(path.join(map_folder, 'map2.txt'))
+        self.map = Map(path.join(map_folder, C_MAP))
 
     def run(self):
         # game loop - set self.playing = False to end the game
@@ -78,19 +77,11 @@ class Game:
             if event.type == pg.QUIT:
                 self.quit()
             if event.type == pg.KEYDOWN:
-                if event.key == pg.K_ESCAPE:
+                if event.key == pg.K_u:
                     self.quit()
-
-    def show_start_screen(self):
-        pass
-
-    def show_go_screen(self):
-        pass
 
 # create the game object
 g = Game()
-g.show_start_screen()
 while True:
     g.new()
     g.run()
-    g.show_go_screen()

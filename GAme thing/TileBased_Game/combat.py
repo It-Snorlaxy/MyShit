@@ -33,10 +33,6 @@ def combat():
     currentEHP = enemyHP
     time.sleep(0.5)
     while crunning == True:
-        keys = pg.key.get_pressed()
-        if keys[pg.K_ESCAPE]:
-            crunning == False
-
         #cscreen.blit(fimage, (WIDTH - 220, HEIGHT - 410))
         cscreen.blit(ENEMY_ASSET, (WIDTH - 1000, HEIGHT - 1000))
         pg.display.flip()
@@ -50,6 +46,7 @@ def combat():
             cscreen.blit(Vic, (textW, textH))
             pg.display.flip()
             time.sleep(2)
+            Dead = True
             crunning = False
 
     #enemyAttack(enemy)

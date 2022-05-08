@@ -27,6 +27,10 @@ GRIDHEIGHT = HEIGHT / TILESIZE
 # player settings
 PLAYER_SPEED = 700
 
+#current map
+C_MAP = 'Hub.txt'
+
+Dead = False
 
 # combat settings
 #Makes a new screen specifically for combat
