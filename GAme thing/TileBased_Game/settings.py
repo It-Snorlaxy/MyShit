@@ -1,4 +1,10 @@
+import pygame as pg
+import sys
+from os import path
+
+pg.init()
 # define some colors (R, G, B)
+TRANSPARENT = (0, 0, 0, 0) #den fjerde værdi er gennemsigtigheden
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 DARKGREY = (40, 40, 40)
@@ -20,3 +26,21 @@ GRIDHEIGHT = HEIGHT / TILESIZE
 
 # player settings
 PLAYER_SPEED = 700
+
+
+# combat settings
+#Makes a new screen specifically for combat
+cscreen = pg.display.set_mode((WIDTH, HEIGHT))
+
+Text = pg.font.SysFont(None, 32) #Laver en textfont som bruges til at vise tekst på skærmen
+textH = 500 #Pixel positionen til brug til at placere teksten
+textW = 400 #Pixel positionen til brug til at placere teksten
+
+#assigns folders for loading in files
+game_folder = path.dirname(__file__)
+assets_folder = path.join(game_folder, 'assets')
+map_folder = path.join(game_folder, 'Maps')
+
+#assets
+PLAYER_ASSET = pg.image.load(path.join(assets_folder, 'player.png')).convert_alpha()
+ENEMY_ASSET = pg.image.load(path.join(assets_folder, 'Enemy.png')).convert_alpha()

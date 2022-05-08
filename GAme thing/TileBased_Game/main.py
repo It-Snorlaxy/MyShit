@@ -8,6 +8,8 @@ from os import path
 from settings import *
 from sprites import *
 from tilemap import *
+from combat import *
+
 
 class Game:
     def __init__(self):
@@ -17,21 +19,27 @@ class Game:
         self.clock = pg.time.Clock()
         self.load_data()
 
-    def load_data(self):
-        game_folder = path.dirname(__file__)
-        self.map = Map(path.join(game_folder, 'map2.txt'))
-
     def new(self):
         # initialize all variables and do all the setup for a new game
         self.all_sprites = pg.sprite.Group()
         self.walls = pg.sprite.Group()
+        self.enemies = pg.sprite.Group()
         for row, tiles in enumerate(self.map.data):
             for col, tile in enumerate(tiles):
                 if tile == '1':
                     Wall(self, col, row)
                 if tile == 'P':
                     self.player = Player(self, col, row)
+                if tile == 'E':
+                    Enemy(self, col, row)
         self.camera = Camera(self.map.width, self.map.height)
+
+    #responsible for creating an easy way to load from folders in the gamefolder (C:users/oliver/"gamefolder")
+    def load_data(self):
+        game_folder = path.dirname(__file__)
+        assets_folder = path.join(game_folder, 'assets')
+        map_folder = path.join(game_folder, 'Maps')
+        self.map = Map(path.join(map_folder, 'map2.txt'))
 
     def run(self):
         # game loop - set self.playing = False to end the game
