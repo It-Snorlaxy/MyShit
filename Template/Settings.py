@@ -3,8 +3,8 @@ from os import path
 
 #definere some colors (R,G,B)
 TRANSPARENT = (0, 0, 0, 0) #Den fjered værdi er opacity (R,G,B,opacity)
-WHITE = (0, 0, 0)
-BLACK = (255, 255, 255)
+BLACK = (0, 0, 0)
+WHITE = (255, 255, 255)
 DARKGREY = (40, 40, 40)
 LIGHTGREY = (100, 100, 100)
 GREEN = (0, 255, 0)
