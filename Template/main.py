@@ -1,6 +1,6 @@
 import pygame as pg
 import sys
-from os import path
+import os
 from Settings import *
 from Sprites import *
 
@@ -8,6 +8,7 @@ class Game:
     def __init__(self):
         pg.init()
         self.screen = pg.display.set_mode((WIDTH, HEIGHT))
+        pg.display.set_icon((PLAYER_ASSET))
         pg.display.set_caption(TITLE)
         self.clock = pg.time.Clock()
         pg.key.set_repeat(500, 100)
@@ -15,6 +16,7 @@ class Game:
 
     def load_data(self):
         game_folder = path.dirname(__file__)
+        assets_folder = path.join(game_folder, 'assets')
         self.map_data = []
         with open(path.join(game_folder, 'map.txt'), 'rt') as f:
             for line in f:

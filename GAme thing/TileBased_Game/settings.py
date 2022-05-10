@@ -40,11 +40,12 @@ Text = pg.font.SysFont(None, 32) #Laver en textfont som bruges til at vise tekst
 textH = 500 #Pixel positionen til brug til at placere teksten
 textW = 400 #Pixel positionen til brug til at placere teksten
 
+pg.display.set_mode((WIDTH, HEIGHT))
+
 #assigns folders for loading in files
 game_folder = path.dirname(__file__)
 assets_folder = path.join(game_folder, 'assets')
 map_folder = path.join(game_folder, 'Maps')
-
 #assets
 PLAYER_ASSET = pg.image.load(path.join(assets_folder, 'player.png')).convert_alpha()
 ENEMY_ASSET = pg.image.load(path.join(assets_folder, 'Enemy.png')).convert_alpha()

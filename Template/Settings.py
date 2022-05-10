@@ -1,7 +1,9 @@
 import pygame as pg
+import sys
 from os import path
+pg.init()
 
-#definere some colors (R,G,B)
+#define some colors (R,G,B)
 TRANSPARENT = (0, 0, 0, 0) #Den fjered værdi er opacity (R,G,B,opacity)
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
@@ -22,3 +24,16 @@ BGCOLOR = DARKGREY
 TILESIZE = 32
 GRIDWIDTH = WIDTH / TILESIZE
 GRIDHEIGHT = HEIGHT / TILESIZE
+
+
+
+#Folder structure
+game_folder = path.dirname(__file__)
+assets_folder = path.join(game_folder, 'assets')
+map_folder = path.join(game_folder, 'Maps')
+
+pg.display.set_mode((WIDTH, HEIGHT))
+
+#assets
+PLAYER_ASSET = pg.image.load(path.join(assets_folder, 'player.png')).convert_alpha()
+ENEMY_ASSET = pg.image.load(path.join(assets_folder, 'Enemy.png')).convert_alpha()
